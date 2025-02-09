@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@import 'remixicon/fonts/remixicon.css';
+
+body {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  h1 {
+    
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); } /* Se mueve un ciclo completo */
+  }
+  
+  .logos-carousel {
+    display: flex;
+    width: 300%; /* Se aumenta el ancho total para que el loop sea fluido */
+    animation: scroll 25s linear infinite;
+  }
+  
+  .logos-carousel img {
+    flex-shrink: 0;
+    max-height: 80px; /* Se agrandaron un 20% como pediste */
+  }
+  

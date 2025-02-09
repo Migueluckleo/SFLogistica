@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página</title>
+  <link rel="stylesheet" href="./output.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+</head>
+
+    <body>
+        <!-- Navbar -->
+        <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50">
+          <div class="mx-auto max-w-[1920px] px-6 flex justify-between items-center h-25">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+              <img src="/assets/SF-logotipo-slogan.png" alt="Logo" class="h-20">
+              
+            </a>
+      
+            <!-- Menú Desktop -->
+            <ul class="hidden md:flex space-x-8 text-gray-700">
+              <li><a href="index.html" class="nav-link hover:text-[#185183]">Inicio</a></li>
+              <li><a href="unidades.html" class="nav-link text-[#185183] underline">Unidades</a></li>
+              <li><a href="cobertura.html" class="nav-link hover:text-[#185183]">Cobertura</a></li>
+              <li><a href="contacto.html" class="nav-link hover:text-[#185183]">Contacto</a></li>
+            </ul>
+      
+            <!-- Icono WhatsApp -->
+            <a href="https://wa.me/1234567890" class="hidden md:block text-[#185183] text-2xl">
+              <i class="ri-whatsapp-line"></i>
+            </a>
+      
+            <!-- Menú Mobile -->
+            <button id="menuToggle" class="md:hidden text-[#185183] text-3xl">
+              <i class="ri-menu-line"></i>
+            </button>
+      
+          </div>
+      
+          <!-- Menú Responsive -->
+          <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-md md:hidden">
+            <ul class="flex flex-col items-center py-4 space-y-4 text-gray-700">
+              <li><a href="index.html" class="nav-link hover:text-[#185183]">Inicio</a></li>
+              <li><a href="unidades.html" class="nav-link text-[#185183] underline">Unidades</a></li>
+              <li><a href="cobertura.html" class="nav-link hover:text-[#185183]">Cobertura</a></li>
+              <li><a href="contacto.html" class="nav-link hover:text-[#185183]">Contacto</a></li>
+            </ul>
+          </div>
+        </nav>
+<!--Hero-->
+ <section class="relative bg-cover bg-center h-screen lg:min-h-[600px] flex items-center pt-24" 
+         style="background-image: url('/assets/heroInicio.jpg');">
+    <div class="container mx-auto px-6 lg:px-0">
+        <!-- Contenedor de la Caja de Texto (centrado con espaciado lateral en móviles) -->
+        <div class="bg-white/40 backdrop-blur-2xl p-6 md:p-10 rounded-xl shadow-lg max-w-lg w-full lg:ml-[8%]">
+            <h1 class="text-gray-800 text-[32px] md:text-[40px] font-light leading-tight">
+                Más de <span class="font-bold text-[#185183]">15 Años</span> <br>
+                Transformando <span class="font-bold">Negocios</span>
+            </h1>
+            <p class="text-gray-600 mt-4 text-sm md:text-base">
+                Todo lo que necesitas en un solo lugar: Con nuestra 
+                experiencia en <span class="text-[#185183]">servicios fiscales, contables, legales y de nómina</span>, 
+                ayudamos a empresas como la tuya a cumplir objetivos y optimizar recursos.
+            </p>
+            <!-- Botones -->
+            <div class="mt-6 flex space-x-4">
+                <a href="unidades.html" class="bg-[#185183] text-white px-6 py-2 rounded-lg text-sm md:text-base font-medium shadow-md hover:bg-[#103A62]">
+                    Unidades
+                </a>
+                <a href="contacto.html" class="border border-[#185183] text-[#185183] px-6 py-2 rounded-lg text-sm md:text-base font-medium hover:bg-[#185183] hover:text-white">
+                    Contacto
+                </a>
+            </div>
+        </div>
+    </div>
+ </section>
+<!--Paginación de camiones-->
+ <section class="container mx-auto px-6 py-12">
+    <!-- Tabs para seleccionar el camión -->
+    <div class="flex justify-center space-x-6 border-b pb-4">
+        <button class="tab-link text-[14px] md:text-lg font-medium text-gray-600 hover:text-[#185183]" data-truck="rabon1">Rabon 1</button>
+        <button class="tab-link text-[14px] md:text-lg font-medium text-gray-600 hover:text-[#185183]" data-truck="rabon2">Rabon 2</button>
+        <button class="tab-link text-[14px] md:text-lg font-medium text-gray-600 hover:text-[#185183]" data-truck="camioneta">Camioneta</button>
+        <button class="tab-link text-[14px] md:text-lg font-medium text-gray-600 hover:text-[#185183]" data-truck="thorton">Thorton</button>
+    </div>
+
+    <!-- Contenedor de Camión -->
+    <div class="relative flex flex-col md:flex-row items-center justify-center mt-8 md:space-x-12">
+        <!-- Botón para cambiar camión anterior (Oculto en mobile) -->
+        <button class="chevron chevron-left absolute left-4 text-[#185183] text-4xl px-4 transition-transform duration-300 hover:scale-125 hidden md:block" data-action="prev">&#8249;</button>
+
+        <!-- Contenedor dinámico de camión -->
+        <div class="truck-container flex flex-col md:flex-row items-center max-w-6xl mx-auto w-full">
+            <div class="truck-image flex justify-center md:w-1/2">
+                <img src="https://tractopartespascal.com/wp-content/uploads/2019/04/Camion_Kenworth_T300_6_velocidades_motor_Caterpillar_3126_Ele%CC%81ctronico_2.jpg" 
+                     class="truck-img w-full max-w-lg transition-transform duration-500 ease-in-out transform scale-100 opacity-100" 
+                     alt="Camión Rabon 1">
+            </div>
+            
+            <!-- Información del camión -->
+            <div class="mt-6 md:mt-0 md:w-1/2 truck-info px-6 md:px-12">
+                <p class="text-sm text-gray-500 truck-description">El aliado ideal para cargas ligeras</p>
+                <h2 class="text-3xl font-bold text-gray-800">Camión <span class="text-[#185183]">Rabon 1</span></h2>
+                <p class="text-gray-600 mt-4 truck-details">
+                    Optimiza tu logística con un camión diseñado para eficiencia y versatilidad. 
+                    Su diseño robusto y maniobrabilidad lo hacen perfecto para entregas rápidas y seguras.
+                </p>
+                <ul class="list-disc text-left mt-4 ml-6 truck-features">
+                    <li>Capacidad ideal para distribución urbana</li>
+                    <li>Seguridad y tecnología de rastreo en tiempo real</li>
+                    <li>Eficiencia en consumo de combustible</li>
+                    <li>Diseñado para minimizar tiempos de carga y descarga</li>
+                </ul>
+                <a href="detalle_rabon1.html" 
+                   class="mt-6 inline-block bg-[#185183] text-white px-8 py-3 rounded-lg text-lg font-medium shadow-md hover:bg-[#103A62] w-full md:w-auto text-center truck-link">
+                    Ver unidad
+                </a>
+            </div>
+        </div>
+
+        <!-- Botón para cambiar camión siguiente (Oculto en mobile) -->
+        <button class="chevron chevron-right absolute right-4 text-[#185183] text-4xl px-4 transition-transform duration-300 hover:scale-125 hidden md:block" data-action="next">&#8250;</button>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+ <footer class="bg-[#185183] text-white py-8">
+    <div class="container mx-auto px-6 lg:px-[8%] flex flex-col lg:flex-row justify-between items-center lg:items-start">
+        <!-- Sección de enlaces -->
+        <div class="text-center lg:text-left mb-6 lg:mb-0">
+            <h3 class="text-lg font-semibold">Más de nosotros</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="preguntas.html" class="hover:underline">Preguntas Frecuentes</a></li>
+                <li><a href="quienes-somos.html" class="hover:underline">Quiénes somos</a></li>
+                <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Separador -->
+        <div class="hidden lg:block border-l border-white h-20"></div>
+
+        <!-- Sección de contacto -->
+        <div class="text-center lg:text-left mb-6 lg:mb-0">
+            <h3 class="text-lg font-semibold">Contacto</h3>
+            <p class="mt-2">33 1816 7026</p>
+            <p>33 2003 1166</p>
+            <a href="mailto:contacto@sfconsultoria.com.mx" class="hover:underline">
+                contacto@sfconsultoria.com.mx
+            </a>
+        </div>
+
+        <!-- Separador -->
+        <div class="hidden lg:block border-l border-white h-20"></div>
+
+        <!-- Logo y redes sociales -->
+        <div class="text-center">
+            <img src="assets/logo.png" alt="SF Consultoría" class="h-12 mx-auto">
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://youtube.com" target="_blank" class="text-white text-2xl">
+                    <i class="ri-youtube-fill"></i>
+                </a>
+                <a href="https://wa.me/5213318167026" target="_blank" class="text-white text-2xl">
+                    <i class="ri-whatsapp-fill"></i>
+                </a>
+            </div>
+            <p class="text-sm mt-4">Derechos reservados | SF Logística 2024</p>
+        </div>
+    </div>
+</footer>
+
+        
+        
+        <!-- Cargar Script -->
+        <script src="scripts.js"></script>
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+      </html>
